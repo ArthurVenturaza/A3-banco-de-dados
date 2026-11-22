@@ -6,10 +6,8 @@ relacional para uma escola de idiomas: modelagem conceitual, lógica, física e 
 ## Integrantes
 | Nome | Curso/Semestre |
 |------|----------------|
-| Integrante 1 | (preencher) |
-| Integrante 2 | (preencher) |
-| Integrante 3 | (preencher) |
-| Integrante 4 | (preencher) |
+| Integrante 1 | (Arthur Zamprogna Ventura) |
+| Integrante 2 | (Pedro Henrique Francio Della Giustina) |
 
 ## Estrutura do repositório
 ```

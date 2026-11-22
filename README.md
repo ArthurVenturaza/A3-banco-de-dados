@@ -7,6 +7,7 @@ relacional para uma escola de idiomas: modelagem conceitual, lógica, física e 
 | Nome | Curso/Semestre |
 
 | Arthur Zamprogna Ventura | (Ciencia da Computação 4º semestre) |
+
 | Pedro Henrique Francio Della Giustina | (Ciencia da Computação 4º semestre) |
 
 ## Estrutura do repositório

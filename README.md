@@ -5,9 +5,8 @@ relacional para uma escola de idiomas: modelagem conceitual, lógica, física e 
 
 ## Integrantes
 | Nome | Curso/Semestre |
-|------|----------------|
-| Integrante 1 | (Arthur Zamprogna Ventura) |
-| Integrante 2 | (Pedro Henrique Francio Della Giustina) |
+| Arthur Zamprogna Ventura | (Ciencia da Computação 4º semestre) |
+| Pedro Henrique Francio Della Giustina | (Ciencia da Computação 4º semestre) |
 
 ## Estrutura do repositório
 ```

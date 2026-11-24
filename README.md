@@ -5,10 +5,9 @@ relacional para uma escola de idiomas: modelagem conceitual, lógica, física e 
 
 ## Integrantes
 | Nome | Curso/Semestre |
-
-| Arthur Zamprogna Ventura | (Ciencia da Computação 4º semestre) |
-
-| Pedro Henrique Francio Della Giustina | (Ciencia da Computação 4º semestre) |
+|---|---|
+| Arthur Zamprogna Ventura | Ciência da Computação - 4º semestre |
+| Pedro Henrique Francio Della Giustina | Ciência da Computação - 4º semestre |
 
 ## Estrutura do repositório
 ```
@@ -16,7 +15,7 @@ docs/        contextualização, DER, modelo relacional, UML, DFs, dicionário
 diagramas/   arquivo .drawio (DER e UML)
 src/sql/
   00_database.sql   criação do banco
-  ddl/              CREATE TABLE (um arquivo por tabela) e ALTER TABLE
+  ddl/              CREATE TABLE (um arquivo por tabela), ALTER TABLE e triggers (11_triggers.sql)
   dml/              INSERT, UPDATE e DELETE
   dql/              consultas SELECT com JOIN (relatórios)
   99_run_all.sql    executa tudo na ordem correta

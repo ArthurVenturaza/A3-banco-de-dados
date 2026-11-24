@@ -1,5 +1,9 @@
 # 6. Dicionário de Dados
 
+Legenda da coluna **Chave**: PK = chave primária; FK = chave estrangeira;
+UNIQUE(n) = restrição de unicidade (colunas com o mesmo número formam uma chave composta);
+CHECK e TRIGGER = regras verificadas pelo banco.
+
 ## idioma
 | Coluna | Tipo | Nulo | Chave | Descrição |
 |---|---|---|---|---|
@@ -20,7 +24,7 @@
 | Coluna | Tipo | Nulo | Chave | Descrição |
 |---|---|---|---|---|
 | id_professor | INT | Não | PK, FK | Professor habilitado |
-| id_idioma | INT | Não | PK, FK | Idioma que o professor leciona |
+| id_idioma | INT | Não | PK, FK | Idioma em que o professor está habilitado |
 
 ## curso
 | Coluna | Tipo | Nulo | Chave | Descrição |
@@ -28,7 +32,7 @@
 | id_curso | INT AUTO_INCREMENT | Não | PK | Identificador do curso |
 | id_idioma | INT | Não | FK | Idioma do curso |
 | nome | VARCHAR(80) | Não | | Nome do curso |
-| nivel | VARCHAR(20) | Não | | Basico, Intermediario ou Avancado |
+| nivel | VARCHAR(20) | Não | | Basico, Intermediario ou Avancado (CHECK) |
 | carga_horaria | SMALLINT | Não | | Horas totais (> 0) |
 | valor_mensalidade | DECIMAL(8,2) | Não | | Valor mensal (> 0) |
 
@@ -44,11 +48,11 @@
 |---|---|---|---|---|
 | id_turma | INT AUTO_INCREMENT | Não | PK | Identificador da turma |
 | id_curso | INT | Não | FK | Curso oferecido |
-| id_professor | INT | Não | FK | Professor responsável |
-| id_sala | INT | Não | FK | Sala utilizada |
-| semestre | CHAR(6) | Não | | Ex.: 2026/2 |
-| dia_semana | VARCHAR(10) | Não | | Dia das aulas: Segunda, Terca, Quarta, Quinta, Sexta ou Sabado (CHECK) |
-| hora_inicio | TIME | Não | | Início da aula |
+| id_professor | INT | Não | FK | Professor responsável (deve estar habilitado no idioma do curso, via TRIGGER) |
+| id_sala | INT | Não | FK, UNIQUE(1) | Sala utilizada |
+| semestre | CHAR(6) | Não | UNIQUE(2) | Ex.: 2026/2 |
+| dia_semana | VARCHAR(10) | Não | UNIQUE(3) | Segunda, Terca, Quarta, Quinta, Sexta ou Sabado (CHECK) |
+| hora_inicio | TIME | Não | UNIQUE(4) | Início da aula |
 | hora_fim | TIME | Não | | Fim da aula (> início) |
 | vagas | SMALLINT | Não | | Número de vagas (> 0; não pode exceder a capacidade da sala, via TRIGGER) |
 
@@ -61,7 +65,7 @@
 | email | VARCHAR(100) | Não | UNIQUE | E-mail |
 | telefone | VARCHAR(15) | Sim | | Telefone |
 | data_nascimento | DATE | Não | | Data de nascimento |
-| ativo | BOOLEAN | Não | | Adicionada via ALTER TABLE; padrão TRUE |
+| ativo | BOOLEAN | Não | | Indica se o aluno está ativo; permite inativar sem apagar histórico (padrão TRUE) |
 
 ## matricula
 | Coluna | Tipo | Nulo | Chave | Descrição |
@@ -70,7 +74,7 @@
 | id_aluno | INT | Não | FK, UNIQUE(1) | Aluno matriculado |
 | id_turma | INT | Não | FK, UNIQUE(2) | Turma escolhida |
 | data_matricula | DATE | Não | | Data da matrícula |
-| situacao | VARCHAR(15) | Não | | Ativa, Trancada, Concluida ou Cancelada (padrão Ativa) |
+| situacao | VARCHAR(15) | Não | | Ativa, Trancada, Concluida ou Cancelada (padrão Ativa; CHECK) |
 
 ## pagamento
 | Coluna | Tipo | Nulo | Chave | Descrição |

@@ -19,6 +19,13 @@ Notação: **PK** em negrito/sublinhado, *FK* em itálico.
   data_vencimento, data_pagamento, forma_pagamento)
   - *id_matricula* referencia matricula; UNIQUE(id_matricula, numero_parcela)
 
+Restrições além da chave estrangeira (implementadas no SQL):
+- **turma**: UNIQUE(id_sala, semestre, dia_semana, hora_inicio); CHECK em dia_semana
+  (Segunda a Sábado); TRIGGER que exige professor habilitado no idioma do curso e
+  vagas ≤ capacidade da sala.
+- **professor_idioma**: TRIGGER que impede remover habilitação em uso por turma.
+- **pagamento**: CHECK (data_pagamento é nula) ⇔ (forma_pagamento é nula).
+
 ## Integridade referencial
 | FK | Referência | ON DELETE |
 |---|---|---|

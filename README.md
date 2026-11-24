@@ -11,20 +11,23 @@ relacional para uma escola de idiomas: modelagem conceitual, lógica, física e 
 
 ## Estrutura do repositório
 ```
-docs/        contextualização, DER, modelo relacional, UML, DFs, dicionário
-diagramas/   arquivo .drawio (DER e UML)
+docs/        contextualização, DER, modelo relacional, DFs, dicionário, UML
+diagramas/   escola-idiomas.drawio (página DER conceitual e página DER UML)
 src/sql/
-  00_database.sql   criação do banco
+  00_database.sql   criação do banco (recria o banco se já existir)
   ddl/              CREATE TABLE (um arquivo por tabela), ALTER TABLE e triggers (11_triggers.sql)
   dml/              INSERT, UPDATE e DELETE
   dql/              consultas SELECT com JOIN (relatórios)
   99_run_all.sql    executa tudo na ordem correta
+LICENSE      licença MIT
 ```
 
 ## Como executar (MySQL 8+)
+Execute a partir da **raiz do repositório**, porque os caminhos do script são relativos:
 ```bash
 mysql -u root -p < src/sql/99_run_all.sql
 ```
+O script apaga o banco `escola_idiomas` se ele já existir e o recria do zero.
 As consultas ficam em `src/sql/dql/` e podem ser executadas uma a uma.
 
 ## Convenção de commits

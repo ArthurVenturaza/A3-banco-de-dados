@@ -1,6 +1,8 @@
 # 4. DER em notação alternativa (UML - diagrama de classes)
 
-O arquivo editável está em `diagramas/escola-idiomas.drawio` (página "DER UML").
+O diagrama editável está em `diagramas/escola-idiomas.drawio`, na página **DER UML**.
+Como em UML a ligação entre classes já é a associação, não há chaves estrangeiras nem classe associativa:
+a N:N entre Professor e Idioma é uma associação direta com multiplicidade 0..* dos dois lados.
 
 ```mermaid
 classDiagram
@@ -9,7 +11,7 @@ classDiagram
     class Professor { +id_professor : int  +nome : string  +cpf : string  +email : string  +telefone : string  +data_admissao : date }
     class Sala { +id_sala : int  +nome : string  +capacidade : int }
     class Turma { +id_turma : int  +semestre : string  +dia_semana : string  +hora_inicio : time  +hora_fim : time  +vagas : int }
-    class Aluno { +id_aluno : int  +nome : string  +cpf : string  +email : string  +telefone : string  +data_nascimento : date }
+    class Aluno { +id_aluno : int  +nome : string  +cpf : string  +email : string  +telefone : string  +data_nascimento : date  +ativo : boolean }
     class Matricula { +id_matricula : int  +data_matricula : date  +situacao : string }
     class Pagamento { +id_pagamento : int  +numero_parcela : int  +valor : decimal  +data_vencimento : date  +data_pagamento : date  +forma_pagamento : string }
 
@@ -22,3 +24,5 @@ classDiagram
     Turma "1" --> "0..*" Matricula : recebe
     Matricula "1" --> "1..*" Pagamento : gera
 ```
+
+As multiplicidades são as mesmas do DER conceitual (`docs/02-der.md`).

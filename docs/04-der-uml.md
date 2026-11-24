@@ -17,7 +17,7 @@ classDiagram
     Curso "1" --> "0..*" Turma : oferecido em
     Professor "1" --> "0..*" Turma : ministra
     Sala "1" --> "0..*" Turma : abriga
-    Professor "0..*" -- "1..*" Idioma : habilitado em
+    Professor "0..*" -- "0..*" Idioma : habilitado em
     Aluno "1" --> "0..*" Matricula : realiza
     Turma "1" --> "0..*" Matricula : recebe
     Matricula "1" --> "1..*" Pagamento : gera

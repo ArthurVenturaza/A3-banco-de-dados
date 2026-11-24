@@ -47,10 +47,10 @@
 | id_professor | INT | Não | FK | Professor responsável |
 | id_sala | INT | Não | FK | Sala utilizada |
 | semestre | CHAR(6) | Não | | Ex.: 2026/2 |
-| dia_semana | VARCHAR(10) | Não | | Dia das aulas |
+| dia_semana | VARCHAR(10) | Não | | Dia das aulas: Segunda, Terca, Quarta, Quinta, Sexta ou Sabado (CHECK) |
 | hora_inicio | TIME | Não | | Início da aula |
 | hora_fim | TIME | Não | | Fim da aula (> início) |
-| vagas | SMALLINT | Não | | Número de vagas (> 0) |
+| vagas | SMALLINT | Não | | Número de vagas (> 0; não pode exceder a capacidade da sala, via TRIGGER) |
 
 ## aluno
 | Coluna | Tipo | Nulo | Chave | Descrição |
@@ -81,4 +81,4 @@
 | valor | DECIMAL(8,2) | Não | | Valor da parcela (> 0) |
 | data_vencimento | DATE | Não | | Vencimento |
 | data_pagamento | DATE | Sim | | Nulo = ainda não pago |
-| forma_pagamento | VARCHAR(20) | Sim | | Pix, Boleto ou Cartao |
+| forma_pagamento | VARCHAR(20) | Sim | | Pix, Boleto ou Cartao; preenchida se e somente se data_pagamento estiver preenchida (CHECK) |

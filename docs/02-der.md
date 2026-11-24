@@ -9,7 +9,7 @@ erDiagram
     PROFESSOR }o--o{ IDIOMA : "e habilitado em"
     ALUNO ||--o{ MATRICULA : "realiza"
     TURMA ||--o{ MATRICULA : "recebe"
-    MATRICULA ||--o{ PAGAMENTO : "gera"
+    MATRICULA ||--|{ PAGAMENTO : "gera"
 
     IDIOMA { int id_idioma PK
              string nome }
@@ -60,4 +60,12 @@ erDiagram
 | Professor - Idioma | N:N (vira a tabela professor_idioma) |
 | Aluno - Turma | N:N, resolvido pela entidade Matrícula |
 | Aluno - Matrícula / Turma - Matrícula | 1:N cada |
-| Matrícula - Pagamento | 1:N |
+| Matrícula - Pagamento | 1:N (cada matrícula gera de 1 a N parcelas) |
+| Professor - Idioma | N:N, com 0..* de cada lado (nem todo professor precisa estar habilitado em um idioma, mas pode estar em vários) |
+
+## Regras de negócio que não cabem na cardinalidade
+- Um professor só pode ministrar turma de um idioma em que esteja habilitado.
+- Duas turmas não podem usar a mesma sala no mesmo dia e horário de início.
+- As vagas de uma turma não podem exceder a capacidade da sala.
+- Uma habilitação em uso por turma não pode ser removida.
+- Estas regras são garantidas no banco por CHECK, UNIQUE e TRIGGER (ver `src/sql/ddl/10_alter.sql` e `11_triggers.sql`).

@@ -12,6 +12,7 @@ SOURCE src/sql/ddl/07_aluno.sql;
 SOURCE src/sql/ddl/08_matricula.sql;
 SOURCE src/sql/ddl/09_pagamento.sql;
 SOURCE src/sql/ddl/10_alter.sql;
+SOURCE src/sql/ddl/11_triggers.sql;
 
 SOURCE src/sql/dml/01_idioma.sql;
 SOURCE src/sql/dml/02_professor.sql;

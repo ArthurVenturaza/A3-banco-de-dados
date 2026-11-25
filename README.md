@@ -6,8 +6,8 @@ relacional para uma escola de idiomas: modelagem conceitual, lógica, física e 
 ## Equipe
 | Nome completo | RA | GitHub |
 |---|---|---|
-| [nome do Pedro] | 10725110773 | [PedroDella](https://github.com/PedroDella) |
-| [nome do Arthur] | 10725111773 | [ArthurVenturaza](https://github.com/ArthurVenturaza) |
+| [Pedro Henrique Francio Della Giustina] | 10725110773 | [PedroDella](https://github.com/PedroDella) |
+| [Arthur Zamprogna Ventura] | 10725111773 | [ArthurVenturaza](https://github.com/ArthurVenturaza) |
 
 ## Estrutura do repositório
 ```

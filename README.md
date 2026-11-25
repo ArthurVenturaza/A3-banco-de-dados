@@ -3,11 +3,11 @@
 Trabalho A3 (Banco de Dados) - UNISUL. Projeto completo de um banco de dados
 relacional para uma escola de idiomas: modelagem conceitual, lógica, física e SQL.
 
-## Integrantes
-| Nome | Curso/Semestre |
-|---|---|
-| Arthur Zamprogna Ventura | Ciência da Computação - 4º semestre |
-| Pedro Henrique Francio Della Giustina | Ciência da Computação - 4º semestre |
+## Equipe
+| Nome completo | RA | GitHub |
+|---|---|---|
+| [nome do Pedro] | 10725110773 | [PedroDella](https://github.com/PedroDella) |
+| [nome do Arthur] | 10725111773 | [ArthurVenturaza](https://github.com/ArthurVenturaza) |
 
 ## Estrutura do repositório
 ```
